@@ -25,12 +25,12 @@ class Reg
 		
 		defineItems();
 		
-		game = new Game(Players + 1, Turns == 0 ? 15 : Turns == 1 ? 30 : 45);
+		game = new Game(Players + 2, Turns == 0 ? 15 : Turns == 1 ? 30 : 45);
 		
 		availableRaces = [0, 1, 2, 3];
 		
 		players = [];
-		for (i in 0...Players + 1)
+		for (i in 0...Players + 2)
 		{
 			players.push(new Player());
 		}

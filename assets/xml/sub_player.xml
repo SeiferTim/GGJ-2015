@@ -36,12 +36,33 @@
 		<anchor x="left" x-flush="left" y="label_hp.bottom" y-flush="top" />
 	</text> 
 	
-	<button id="button_end" x="0" y="-20" label="End Turn" width="220" use_def="game_button" group="display">
+	
+	
+	<button id="button_explore" x="0" y="-20" label="Explore" width="200" use_def="game_button" group="display">
+		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>
+		<param type="string" value="button_explore" />
+	</button>
+	
+	<button id="button_survey" x="0" y="-20" label="Survey" width="200" use_def="game_button" group="display">
+		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>
+		<param type="string" value="button_survey" />
+	</button>
+	
+	<button id="button_combat" x="0" y="-20" label="Combat" width="200" use_def="game_button" group="display">
+		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>
+		<param type="string" value="button_combat" />
+	</button>
+	
+	<button id="button_end" x="0" y="-20" label="End Turn" width="200" use_def="game_button" group="display">
 		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>
 		<param type="string" value="button_end" />
 	</button>
 	
- 	
+ 	<align axis="horizontal" spacing="20" resize="false">
+		<bounds left="screen.left+20" right="screen.right-20"/>
+		<objects value="button_explore,button_survey,button_combat,button_end"/>
+	</align>
+	
 	<mode id="player_0" is_default="true">
 		<show id="back_0" />
 		<hide id="back_1,back_2,back_3"/>
