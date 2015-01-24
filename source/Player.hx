@@ -13,4 +13,10 @@ class Player
 	public var vp:Int; // Player's Victory Points
 	public var items:Array<Int>; // Player's items (encoded 0 to some number)
 	
+	
+	public function new() 
+	{
+		
+	}
+	
 }

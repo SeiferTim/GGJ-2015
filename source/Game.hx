@@ -1,5 +1,7 @@
 package ;
 
+using flixel.util.FlxArrayUtil;
+
 class Game
 {
 
@@ -9,6 +11,17 @@ class Game
 	public var turn:Int;				// current turn
 	public var maxTurns:Int;			// number of turns until game ends
 	
-	
+	public function new(Players:Int, MaxTurns:Int)
+	{
+		players = Players;
+		maxTurns = MaxTurns;
+		turn = 0;
+		
+		positions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+		positions = Reg.rnd.shuffleArray(positions, 10);
+		
+		
+		
+	}
 	
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	
+	<include id="_ui_globals"/>
+	
+	<group id="buttons" />
+	
+	<text id="label_players" use_def="screen_text" x="0" y="10" text="Number of Players" size="48" width="900" align="center" group="buttons" >
+		<anchor x="center" y="top" x-flush="center" y-flush="top" />
+	</text>
+	
+	<button_toggle id="players_2" use_def="game_button" x="0" y="10" label="2" width="200" group="buttons" >
+		<anchor x="center" y="label_players.bottom" x-flush="center" y-flush="top" />
+		<param type="string" value="players_2" />
+	</button_toggle>
+	<button_toggle id="players_3" use_def="game_button" x="0" y="10" label="3" width="200" group="buttons" >
+		<anchor x="center" y="label_players.bottom" x-flush="center" y-flush="top" />
+		<param type="string" value="players_3" />
+	</button_toggle>
+	<button_toggle id="players_4" use_def="game_button" x="0" y="10" label="4" width="200" group="buttons" >
+		<anchor x="center" y="label_players.bottom" x-flush="center" y-flush="top" />
+		<param type="string" value="players_4" />
+	</button_toggle>
+	
+	<text id="label_length" use_def="screen_text" x="0" y="40" text="Game Length" size="48" width="900" align="center" group="buttons" >
+		<anchor x="center" y="players_2.bottom" x-flush="center" y-flush="top" />
+	</text>
+	
+	
+	<button_toggle id="turns_short" use_def="game_button" x="0" y="10" label="Short" width="200" group="buttons" >
+		<anchor x="center" y="label_length.bottom" x-flush="center" y-flush="top" />
+		<param type="string" value="turns_short" />
+	</button_toggle>
+	<button_toggle id="turns_med" use_def="game_button" x="0" y="10" label="Medium" width="200" group="buttons" >
+		<anchor x="center" y="label_length.bottom" x-flush="center" y-flush="top" />
+		<param type="string" value="turns_med" />
+	</button_toggle>
+	<button_toggle id="turns_long" use_def="game_button" x="0" y="10" label="Long" width="200" group="buttons" >
+		<anchor x="center" y="label_length.bottom" x-flush="center" y-flush="top" />
+		<param type="string" value="turns_long" />
+	</button_toggle>
+	
+	
+	<button id="button_start" use_def="game_button" x="0" y="-40" label="Start!" width="200" group="buttons">
+		<anchor x="center" y="bottom" x-flush="center" y-flush="bottom"/>
+		<param type="string" value="button_start" />
+	</button>
+	
+	<align axis="horizontal" spacing="40" resize="false">
+		<bounds left="screen.left+140" right="screen.right-140"/>
+		<objects value="players_2,players_3,players_4"/>
+		<objects value="turns_short,turns_med,turns_long"/>
+	</align>
+	
+	
+</data>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	
+	<definition id="button_text" color="0x000000" font="kimberley" />
+	<definition id="screen_text" color="0xffffff" font="kimberley" />
+	
+	<definition id="game_button" height="80" >
+		<text use_def="button_text" size="48" />
+		
+	</definition>
+</data>
