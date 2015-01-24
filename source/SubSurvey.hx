@@ -18,7 +18,7 @@ class SubSurvey extends FlxUISubState
 	public var btnCancel:FlxUITypedButton<FlxSprite>;
 	private var _grpList:FlxUIGroup;
 	private var _sprBack:FlxUISprite;
-	
+	private var _showingPlanet:Bool = false;
 	
 	
 	public function new()
@@ -48,7 +48,7 @@ class SubSurvey extends FlxUISubState
 	
 	override public function getEvent(id:String, sender:IFlxUIWidget, data:Dynamic, ?eventParams:Array<Dynamic>):Void 
 	{
-		if (_ending)
+		if (_ending || _showingPlanet)
 			return;
 		switch(id)
 		{
@@ -80,6 +80,24 @@ class SubSurvey extends FlxUISubState
 	
 	public function selectPlanet(PlanetNo:Int):Void
 	{
-		close();
+		_showingPlanet = true;
+		if (Reg.game.planetsDiscovered[PlanetNo] == -1)
+		{
+			Reg.players[Reg.game.playerTurn].credits += 100;
+			Reg.game.planetsDiscovered[PlanetNo] = Reg.game.playerTurn;
+			var s:SubPlanetReveal = new SubPlanetReveal(PlanetNo, Reg.game.positions[PlanetNo]);
+			s.closeCallback = function() { close(); }
+			openSubState(s);
+			
+
+		}
+		else
+			close();
+	}
+	
+	override public function update(elapsed:Float):Void 
+	{
+		super.update(elapsed);
+		
 	}
 }

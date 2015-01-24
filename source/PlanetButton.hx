@@ -22,7 +22,7 @@ class PlanetButton extends FlxUIGroup
 		
 		super(X, Y);
 		
-		_back = new FlxUIButton(10, 0, (Reg.game.planetsDiscovered[_planetNo] == -1 ? String.fromCharCode(65 + _planetNo) : Std.string(Reg.game.positions[_planetNo])), SelectPlanet);
+		_back = new FlxUIButton(10, 0, (Reg.game.planetsDiscovered[_planetNo] == -1 ? String.fromCharCode(65 + _planetNo) : Std.string(Reg.game.positions[_planetNo]+1)), SelectPlanet);
 		//_back.loadGraphicSlice9(["", "", ""], FlxG.width - 32, 120, null, FlxUI9SliceSprite.TILE_NONE);
 		
 		_back.copyStyle(_parent.btnCancel);
