@@ -60,6 +60,8 @@ class SubPlayer extends FlxUISubState
 						case "button_survey":
 							//_ending = true;
 							openSubState(new SubSurvey());
+						case "button_explore":
+							openSubState(new SubExplore());
 							
 							
 							

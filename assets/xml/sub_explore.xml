@@ -1,45 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
 <include id="_ui_globals"/>
+
 	
-	<group id="back" />
-	
-	<group id="new_turn" />
 	<group id="display" />
+
 	
-	<sprite id="back_0" x="0" y="0" width="screen.width" height="screen.height" color="0xffff0000" group="back" >
-		<anchor x="center" y="center" x-flush="center" y-flush="center" />
-	</sprite>
-	<sprite id="back_1" x="0" y="0" width="screen.width" height="screen.height" color="0xffff00ff" group="back" >
-		<anchor x="center" y="center" x-flush="center" y-flush="center" />
-	</sprite>
-	<sprite id="back_2" x="0" y="0" width="screen.width" height="screen.height" color="0xff0000ff" group="back" >
-		<anchor x="center" y="center" x-flush="center" y-flush="center" />
-	</sprite>
-	<sprite id="back_3" x="0" y="0" width="screen.width" height="screen.height" color="0xffffff00" group="back" >
-		<anchor x="center" y="center" x-flush="center" y-flush="center" />
-	</sprite>
-	
-	<button_toggle id="button_0" x="0" y="0" label="Move 0" use_def="game_button" width="200" group="new_turn">
-		<anchor x="center" x-flush="center" y="center" y-flush="center" />
-		<param type="string" value="button_ready" />
+	<button_toggle id="button_0" x="-20" y="-20" label="Move 0" use_def="game_button" width="200" group="display">
+		<anchor x="center" x-flush="right" y="center" y-flush="bottom" />
+		<param type="string" value="button_0" />
 	</button_toggle>
-	<button_toggle id="button_1" x="0" y="0" label="Move 1" use_def="game_button" width="200" group="new_turn">
-		<anchor x="center" x-flush="center" y="center" y-flush="center" />
-		<param type="string" value="button_ready" />
+	<button_toggle id="button_1" x="20" y="-20" label="Move 1" use_def="game_button" width="200" group="display">
+		<anchor x="center" x-flush="left" y="center" y-flush="bottom" />
+		<param type="string" value="button_1" />
 	</button_toggle>
-	<button_toggle id="button_sp" x="0" y="0" label="Move " + Std.string(Reg.players[Reg.game.playerTurn].speed) use_def="game_button" width="200" group="new_turn">
-		<anchor x="center" x-flush="center" y="center" y-flush="center" />
-		<param type="string" value="button_ready" />
+	<button_toggle id="button_sp" x="-20" y="20" label="Move x" use_def="game_button" width="200" group="display">
+		<anchor x="center" x-flush="right" y="center" y-flush="top" />
+		<param type="string" value="button_sp" />
 	</button_toggle>
-	<button_toggle id="button_2sp" x="0" y="0" label="Move " + Std.string(Reg.players[Reg.game.playerTurn].speed * 2) use_def="game_button" width="200" group="new_turn">
-		<anchor x="center" x-flush="center" y="center" y-flush="center" />
-		<param type="string" value="button_ready" />
+	<button_toggle id="button_2sp" x="20" y="20" label="Move 2x" use_def="game_button" width="200" group="display">
+		<anchor x="center" x-flush="left" y="center" y-flush="top" />
+		<param type="string" value="button_2sp" />
 	</button_toggle>
-	
-	<align axis="horizontal" spacing="20" resize="false">
-		<bounds left="screen.left+20" right="screen.right-20"/>
-		<objects value="button_0,button_1,button_sp,button_2sp"/>
-	</align>
+	<button id="button_cancel" x="0" y="-20" label="Cancel" use_def="game_button" width="200" group="display">
+		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom" />
+		<param type="string" value="button_cancel" />
+	</button>
+
 	
 </data>
