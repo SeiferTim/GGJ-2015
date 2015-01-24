@@ -1,1 +1,5 @@
-*/export/
+# Build and Release Folders
+export/
+
+# Other files and folders
+.settings/
