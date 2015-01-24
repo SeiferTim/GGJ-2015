@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+	<include id="_ui_globals"/>
+	
+	<group id="list"/>
+	<group id="button"/>
+	
+	<sprite id="sprite_back" x="0" y="0" color="0xff000000" width="screen.width" height="100" group="button" >
+		<anchor x="left" y="top" x-flush="left" y-flush="left" />
+	</sprite>
+	
+	<button id="button_cancel" x="0" y="10" use_def="game_button" label="Cancel" width="screen.width-20" group="button">
+		<anchor x="center" y="top" x-flush="center" y-flush="top" />
+		<param type="string" value="button_cancel" />
+	</button>
+	
+	<button id="button_up" x="-2" y="10" label="^" width="32" use_def="game_button" group="button">
+		<anchor x="right" x-flush="right" y="sprite_back.bottom" y-flush="top"/>
+		<param type="string" value="button_up" />
+	</button>
+	
+	<button id="button_down" x="-2" y="-10" label="v" width="32" use_def="game_button" group="button">
+		<anchor x="right" x-flush="right" y="bottom" y-flush="bottom"/>
+		<param type="string" value="button_down" />
+	</button>
+	
+	
+</data>

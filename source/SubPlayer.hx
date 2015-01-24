@@ -32,6 +32,9 @@ class SubPlayer extends FlxUISubState
 		_ui.addAsset(_fuel, "fuel_bar", "display");
 		
 		_grpDisplay.visible = false;
+		
+		
+		
 	}
 	
 	override public function getEvent(id:String, sender:IFlxUIWidget, data:Dynamic, ?eventParams:Array<Dynamic>):Void 
@@ -54,6 +57,10 @@ class SubPlayer extends FlxUISubState
 							_ending = true;
 							Reg.endTurn();
 							close();
+						case "button_survey":
+							//_ending = true;
+							openSubState(new SubSurvey());
+							
 							
 							
 					}
