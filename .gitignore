@@ -1,6 +1,7 @@
-.DS_Store
-.idea/workspace.xml
-/build
-/export/
-/report/
-/assets/data/*.hash
+*.zip
+*.n
+template-bak/*
+*.log
+tests/report/
+tests/.temp/
+tests/bin/
