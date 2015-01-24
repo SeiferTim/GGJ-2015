@@ -1,2 +1,6 @@
-*/export
-*/export/*
+.DS_Store
+.idea/workspace.xml
+/build
+/export/
+/report/
+/assets/data/*.hash
