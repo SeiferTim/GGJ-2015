@@ -1,7 +1,1 @@
-*.zip
-*.n
-template-bak/*
-*.log
-tests/report/
-tests/.temp/
-tests/bin/
+*/export/

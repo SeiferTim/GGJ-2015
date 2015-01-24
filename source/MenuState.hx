@@ -6,6 +6,8 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 using flixel.util.FlxSpriteUtil;
+import flixel.group.FlxGroup;
+
 
 /**
  * A FlxState which can be used for the game's menu.
@@ -13,8 +15,15 @@ using flixel.util.FlxSpriteUtil;
 class MenuState extends FlxState
 {
 	
+	private var _grpStart:FlxGroup;
+	private var _grpStartGame:FlxGroup;
+	private var _grpJoinGame:FlxGroup;
+	
 	private var _btnStartGame:FlxButton;
 	private var _btnJoinGame:FlxButton;
+	
+	private var _txtCode:FlxText;
+	
 	
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -23,15 +32,21 @@ class MenuState extends FlxState
 	{
 		super.create();
 		
+		_grpStart = new FlxGroup();
+		add(_grpStart);
+		
 		_btnStartGame = new FlxButton(0, 20, "Start Game", startGame);
 		_btnStartGame.screenCenter(true, false);
-		add(_btnStartGame);
+		_grpStart.add(_btnStartGame);
 		
 		_btnJoinGame = new FlxButton(0, _btnStartGame.y + _btnStartGame.height + 20, "Join Game", joinGame);
 		_btnJoinGame.screenCenter(true, false);
-		add(_btnJoinGame);
+		_grpStart.add(_btnJoinGame);
 		
+		_grpStartGame = new FlxGroup();
+		add(_grpStartGame);
 		
+		_txtCode = new FlxText();
 		
 	}
 	

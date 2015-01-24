@@ -2,13 +2,13 @@
 <project>
 	<!------------------------------APPLICATION SETTINGS---------------------------->
 	
-	<app title="ggj-2015" file="ggj-2015" main="Main" version="0.0.1" company="HaxeFlixel" />
+	<app title="GGJ-2015" file="GGJ-2015" main="Main" version="0.0.1" company="HaxeFlixel" />
 	
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 	<!--or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"!-->
 	<app preloader="flixel.system.FlxPreloader" />
 	
-	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2 -->	
+	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2 -->
 	<set name="SWF_VERSION" value="11.8" />
 	
 	<!--------------------------------WINDOW SETTINGS------------------------------->

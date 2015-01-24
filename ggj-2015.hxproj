@@ -15,7 +15,7 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="C:\HaxeToolkit\haxe\lib\flixel\3,3,6" />
+    <class path="C:\HaxeToolkit\haxe\lib\flixel\git" />
     <class path="C:\HaxeToolkit\haxe\lib\openfl\2,1,6" />
     <class path="C:\HaxeToolkit\haxe\lib\lime\2,0,6" />
     <class path="source" />
@@ -23,12 +23,12 @@
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="flixel=3.3.6&#xA;openfl=2.1.6&#xA;lime=2.0.6&#xA;tools=2.0.6&#xA;no-compilation&#xA;openfl-flash&#xA;FLX_RENDER_BLIT&#xA;web" />
+    <option directives="flixel=3.3.6&#xA;openfl=2.1.6&#xA;lime=2.0.6&#xA;tools=2.0.6&#xA;FLX_NO_DEBUG&#xA;no-compilation&#xA;NAPE_RELEASE_BUILD&#xA;openfl-flash&#xA;web" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="False" />
-    <option additional="-swf-version 11.8&#xA;-debug " />
+    <option additional="--macro flixel.system.macros.FlxConditionals.run()&#xA;-swf-version 11.8" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
