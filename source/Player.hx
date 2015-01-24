@@ -11,6 +11,7 @@ class Player
 	public var credits:Int; // Player's credits (money)
 	public var vp:Int; // Player's Victory Points
 	public var items:Array<Int>; // Player's items (encoded 0 to some number)
+	public var speed:Int; // Player's speed (affects movement range)
 	
 	
 	public function new() 

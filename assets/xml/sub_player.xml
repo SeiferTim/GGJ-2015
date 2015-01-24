@@ -20,7 +20,7 @@
 		<anchor x="center" y="center" x-flush="center" y-flush="center" />
 	</sprite>
 	
-	<text id="title_text" x="10" y="20" text="Pass me to Player 1" use_def="screen_text" size="48" align="center" width="screen.width-20" group="new_turn" >
+	<text id="title_text" x="0" y="20" text="Pass me to Player 1" use_def="screen_text" size="48" align="center" width="screen.width-20" group="new_turn" >
 		<anchor x="center" x-flush="center" y="top" y-flush="top" />
 	</text>
 	
