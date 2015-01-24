@@ -8,17 +8,18 @@
 -cp source
 -D lime-openal
 -D tools=2.0.0
+-D FLX_NO_DEBUG
 -D flash-use-stage
 -D no-compilation
 -D lime-opengl
+-D NAPE_RELEASE_BUILD
 -D openfl-flash
 -D lime-curl
--D fdb
 -D web
 --macro flixel.system.macros.FlxConditionals.run()
 -swf-lib export/flash/obj/assets.swf
 -swf-version 11.8
 -swf export/flash/bin/ggj-2015.swf
--swf-header 640:360:60:000000
+-swf-header 960:540:60:000000
 -cp export/flash/haxe
 -debug

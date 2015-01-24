@@ -103,19 +103,19 @@ class ApplicationMain {
 			depthBuffer: false,
 			fps: Std.int (60),
 			fullscreen: false,
-			height: Std.int (360),
+			height: Std.int (540),
 			orientation: "portrait",
 			resizable: true,
 			stencilBuffer: false,
 			title: "ggj-2015",
 			vsync: true,
-			width: Std.int (640),
+			width: Std.int (960),
 			
 		}
 		
 		#if js
 		#if munit
-		flash.Lib.embed (null, 640, 360, "000000");
+		flash.Lib.embed (null, 960, 540, "000000");
 		#end
 		#else
 		create ();
