@@ -1,12 +1,16 @@
 package;
 
+import flixel.addons.ui.FlxUIButton;
 import flixel.addons.ui.FlxUISubState;
+import flixel.addons.ui.interfaces.IFlxUIWidget;
 import flixel.util.FlxColor;
 
 
 class SubExplore extends FlxUISubState
 {
 
+	private var _ending:Bool = false;
+	
 	public function new()
 	{
 		super(0xff000000);
@@ -18,9 +22,18 @@ class SubExplore extends FlxUISubState
 		_xml_id = "sub_explore";
 		super.create();
 		
-		// Reg.players[Reg.game.playerTurn].curFuel
-		//Std.string(Reg.players[Reg.game.playerTurn].speed)
-		//Std.string(Reg.players[Reg.game.playerTurn].speed * 2)
+		if (Reg.players[Reg.game.playerTurn].curFuel < 3)
+		{
+			cast(_ui.getAsset("button_2sp"), FlxUIButton).toggled = true;
+			cast(_ui.getAsset("button_2sp"), FlxUIButton).skipButtonUpdate = true;
+		}
+		if (Reg.players[Reg.game.playerTurn].curFuel < 1)
+		{
+			cast(_ui.getAsset("button_2sp"), FlxUIButton).toggled = true;
+			cast(_ui.getAsset("button_2sp"), FlxUIButton).skipButtonUpdate = true;
+			cast(_ui.getAsset("button_sp"), FlxUIButton).toggled = true;
+			cast(_ui.getAsset("button_sp"), FlxUIButton).skipButtonUpdate = true;
+		}
 		
 	}
 	
@@ -39,20 +52,25 @@ class SubExplore extends FlxUISubState
 					switch(param)
 					{
 						case "button_0":
+							// Future: explanatory message
 							Reg.players[Reg.game.playerTurn].curFuel++;
-							// "End Turn" button
+							_ending = true;
+							close();
 						case "button_1":
-							// message to move one space
+							// Future: message to move one space
 							// no change in fuel
-							// "End Turn" button
+							_ending = true;
+							close();
 						case "button_sp":
-							// message to move ## spaces
+							// Future: message to move ## spaces
 							Reg.players[Reg.game.playerTurn].curFuel--;
-							// "End Turn" button
+							_ending = true;
+							close();
 						case "button_2sp":
-							// message to move ## spaces
+							// Future: message to move ## spaces
 							Reg.players[Reg.game.playerTurn].curFuel -= 3;
-							// "End Turn" button
+							_ending = true;
+							close();
 						case "button_cancel":
 							_ending = true;
 							close();
