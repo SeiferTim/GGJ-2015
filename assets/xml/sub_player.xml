@@ -35,7 +35,14 @@
 	<text id="label_fuel" x="20" y="10" text="Fuel:" use_def="screen_text" size="28" align="right" width="68" group="display">
 		<anchor x="left" x-flush="left" y="label_hp.bottom" y-flush="top" />
 	</text> 
+	 
+	<text id="label_credits" x="20" y="10" text="Credits:" use_def="screen_text" size="28" align="right" width="110" group="display">
+		<anchor x="left" x-flush="left" y="label_fuel.bottom" y-flush="top" />
+	</text>
 	
+	<text id="value_credits" x="20" y="10" text="00000" use_def="screen_text" size="28" align="left" width="110" group="display">
+		<anchor x="label_credits.right" x-flush="left" y="label_fuel.bottom" y-flush="top" />
+	</text>
 	
 	<button id="button_explore" x="0" y="-20" label="Explore" width="200" use_def="game_button" group="display">
 		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>

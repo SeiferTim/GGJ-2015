@@ -26,7 +26,7 @@ class PlanetButton extends FlxUIGroup
 		//_back.loadGraphicSlice9(["", "", ""], FlxG.width - 32, 120, null, FlxUI9SliceSprite.TILE_NONE);
 		
 		_back.copyStyle(_parent.btnCancel);
-		_back.resize(FlxG.width -52, 100);
+		_back.resize(FlxG.width - 78, 100);
 		
 		add(_back);
 		

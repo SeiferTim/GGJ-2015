@@ -17,6 +17,8 @@ class SubPlayer extends FlxUISubState
 	
 	private var _ending:Bool = false;
 	
+	private var _txtCredits:FlxUIText;
+	
 	override public function create():Void 
 	{
 		_xml_id = "sub_player";
@@ -33,9 +35,19 @@ class SubPlayer extends FlxUISubState
 		
 		_grpDisplay.visible = false;
 		
+		_txtCredits = cast _ui.getAsset("value_credits");
+		
+		refresh();
+		
+	}
+	
+	private function refresh():Void
+	{
+		_txtCredits.text = Std.string(Reg.players[Reg.game.playerTurn].credits);
 		
 		
 	}
+	
 	
 	override public function getEvent(id:String, sender:IFlxUIWidget, data:Dynamic, ?eventParams:Array<Dynamic>):Void 
 	{
@@ -48,6 +60,7 @@ class SubPlayer extends FlxUISubState
 				{
 					var param:String = cast(eventParams[0], String);
 					
+					
 					switch(param)
 					{
 						case "button_ready":
@@ -59,9 +72,14 @@ class SubPlayer extends FlxUISubState
 							close();
 						case "button_survey":
 							//_ending = true;
-							openSubState(new SubSurvey());
+							var s:SubSurvey = new SubSurvey();
+							s.closeCallback = refresh;
+							openSubState(s);
 						case "button_explore":
-							openSubState(new SubExplore());
+							var e:SubExplore = new SubExplore();
+							e = new SubExplore();
+							e.closeCallback = refresh;
+							openSubState(e);
 							
 							
 							

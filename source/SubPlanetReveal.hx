@@ -11,12 +11,13 @@ class SubPlanetReveal extends FlxUISubState
 	private var _ending:Bool = false;
 	private var _planetNo:Int;
 	private var _whichPlanet:Int;
+	private var _otherWormHole:Int;
 	
-	public function new(PlanetNo:Int, WhichPlanet:Int) 
+	public function new(PlanetNo:Int, WhichPlanet:Int, OtherWormHole:Int) 
 	{
 		_planetNo = PlanetNo;
 		_whichPlanet = WhichPlanet;
-		
+		_otherWormHole = OtherWormHole;
 		super(0xff000000);
 	}
 	
@@ -27,7 +28,7 @@ class SubPlanetReveal extends FlxUISubState
 		
 		if (_whichPlanet > 9)
 		{
-			_ui.getFlxText("text_planet").text = "Wormhole";
+			_ui.getFlxText("text_planet").text = "Wormholes at " + String.fromCharCode(65 + _planetNo) + " and " + String.fromCharCode(65 + _otherWormHole);
 		}
 		else
 		{

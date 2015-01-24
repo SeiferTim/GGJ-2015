@@ -1,12 +1,14 @@
 package;
 
 import flixel.addons.ui.FlxUISubState;
+import flixel.addons.ui.interfaces.IFlxUIWidget;
 import flixel.util.FlxColor;
 
 
 class SubExplore extends FlxUISubState
 {
 
+	private var _ending:Bool = false;
 	public function new()
 	{
 		super(0xff000000);

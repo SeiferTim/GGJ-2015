@@ -37,7 +37,7 @@ class SubSurvey extends FlxUISubState
 		btnCancel = cast _ui.getAsset("button_cancel");
 		_sprBack = cast _ui.getAsset("sprite_back");
 		
-		for (i in 0...11)
+		for (i in 0...12)
 		{
 			_grpList.add(new PlanetButton(0, _sprBack.height + (i * 110), i, this));
 		}
@@ -85,7 +85,24 @@ class SubSurvey extends FlxUISubState
 		{
 			Reg.players[Reg.game.playerTurn].credits += 100;
 			Reg.game.planetsDiscovered[PlanetNo] = Reg.game.playerTurn;
-			var s:SubPlanetReveal = new SubPlanetReveal(PlanetNo, Reg.game.positions[PlanetNo]);
+			var otherWormHole:Int = -1;
+			if ( Reg.game.positions[PlanetNo] >= 10)
+			{
+				
+				for (i in 0...12)
+				{
+					if (( Reg.game.positions[PlanetNo] == 10 && Reg.game.positions[i] == 11) || ( Reg.game.positions[PlanetNo] == 11 && Reg.game.positions[i] == 10) )
+					{
+						otherWormHole = i;
+						
+					}
+				}
+				Reg.game.planetsDiscovered[otherWormHole] = Reg.game.playerTurn;
+			}
+			var s:SubPlanetReveal = new SubPlanetReveal(PlanetNo, Reg.game.positions[PlanetNo], otherWormHole);
+			
+			
+			
 			s.closeCallback = function() { close(); }
 			openSubState(s);
 			

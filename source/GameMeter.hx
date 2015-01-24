@@ -8,6 +8,7 @@ import flixel.util.FlxColor;
 class GameMeter extends FlxUIGroup
 {
 
+	private var _height:Float;
 	private var _playerNo:Int;
 	private var _mode:Int;
 	
@@ -18,17 +19,18 @@ class GameMeter extends FlxUIGroup
 	
 	public function new(X:Float=0, Y:Float=0, Height:Float, Mode:Int, PlayerNo:Int) 
 	{
+		_height = Height;
 		_mode = Mode;
 		_playerNo = PlayerNo;
 		super(X, Y);
 		_pips = [];
 		var p:FlxUISprite;
 		
-		add(new FlxUISprite(0, 0).makeGraphic((10 * 12) + 2, Std.int(Height), 0xff111111));
+		add(new FlxUISprite(0, 0).makeGraphic((10 * 12) + 2, Std.int(_height), 0xff111111));
 		
 		for (i in 0...10)
 		{
-			p = cast new FlxUISprite((i * 12)+2, 2).makeGraphic(10, Std.int(Height-4), getColor(i));
+			p = cast new FlxUISprite((i * 12)+2, 2).makeGraphic(10, Std.int(_height-4), getColor(i));
 			_pips.push(p);
 			add(p);
 		}

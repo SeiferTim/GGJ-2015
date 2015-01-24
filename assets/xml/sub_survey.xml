@@ -15,12 +15,12 @@
 		<param type="string" value="button_cancel" />
 	</button>
 	
-	<button id="button_up" x="-2" y="10" label="^" width="32" use_def="game_button" group="button">
+	<button id="button_up" x="-8" y="10" label="^" width="48" use_def="game_button" group="button">
 		<anchor x="right" x-flush="right" y="sprite_back.bottom" y-flush="top"/>
 		<param type="string" value="button_up" />
 	</button>
 	
-	<button id="button_down" x="-2" y="-10" label="v" width="32" use_def="game_button" group="button">
+	<button id="button_down" x="-8" y="-10" label="v" width="48" use_def="game_button" group="button">
 		<anchor x="right" x-flush="right" y="bottom" y-flush="bottom"/>
 		<param type="string" value="button_down" />
 	</button>
