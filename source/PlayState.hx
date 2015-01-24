@@ -1,22 +1,21 @@
 package;
 
+import flixel.addons.ui.FlxUIState;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 
-/**
- * A FlxState which can be used for the actual gameplay.
- */
 class PlayState extends FlxState
 {
-	/**
-	 * Function that is called up when to state is created to set it up. 
-	 */
-	override public function create():Void
+	override public function update(elapsed:Float):Void 
 	{
-		super.create();
+		
+		super.update(elapsed);
+		
+		openSubState(new SubPlayer());
+		
 	}
 	
 }

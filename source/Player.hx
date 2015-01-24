@@ -3,7 +3,6 @@ package;
 class Player
 {
 
-	public var name:String; // Player's name
 	public var race:Int; // Player's race (encoded 0-3)
 	public var curHealth:Int; // Player's current health
 	public var maxHealth:Int; // Player's maximum health
@@ -16,6 +15,13 @@ class Player
 	
 	public function new() 
 	{
+		Reg.availableRaces = Reg.rnd.shuffleArray(Reg.availableRaces, 10);
+		race = Reg.availableRaces.pop();
+		
+		curHealth = maxHealth = 5;
+		curFuel = maxFuel = 5;
+		credits = vp = 0;
+		items = [];
 		
 	}
 	
