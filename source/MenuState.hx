@@ -47,9 +47,9 @@ class MenuState extends FlxState
 	/**
 	 * Function that is called once every frame.
 	 */
-	override public function update(elaspsed:Float):Void
+	override public function update(elapsed:Float):Void
 	{
-		super.update(elaspsed);
+		super.update(elapsed);
 	}	
 	
 	
