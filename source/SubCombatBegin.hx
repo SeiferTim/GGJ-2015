@@ -44,7 +44,7 @@ class SubCombatBegin extends FlxUISubState
 					
 					switch(param)
 					{
-						case "button_0":
+						case "button_P":
 							// Future: explanatory message
 							if (Reg.players[Reg.game.playerTurn].curFuel < Reg.players[Reg.game.playerTurn].maxFuel)
 							{
