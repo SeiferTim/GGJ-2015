@@ -39,7 +39,7 @@ class SubSurvey extends FlxUISubState
 		
 		for (i in 0...6)
 		{
-			_grpList.add(new PlanetButton(0, _sprBack.height + (i * 110), i, this));
+			_grpList.add(new PlanetButton(0, 20 +  (Math.floor(i /2 ) * 110), i, this));
 		}
 		
 		
@@ -62,15 +62,7 @@ class SubSurvey extends FlxUISubState
 						case "button_cancel":
 							_ending = true;
 							close();
-						case "button_down":
-							_grpList.y -= 60;
-							if (_grpList.y < FlxG.height - (6 * 110) - _sprBack.height)
-								_grpList.y = FlxG.height - (6 * 110) - _sprBack.height;
-							
-						case "button_up":
-							_grpList.y += 60;
-							if (_grpList.y > 0)
-								_grpList.y = 0;
+						
 							
 					}
 				}

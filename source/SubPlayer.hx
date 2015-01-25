@@ -27,7 +27,7 @@ class SubPlayer extends FlxUISubState
 		_xml_id = "sub_player";
 		super.create();
 		_ui.setMode("player_" + Std.string(Reg.players[Reg.game.playerTurn].race));
-		cast( _ui.getAsset("title_text"), FlxUIText).text = "Pass Me to Player " + Std.string(Reg.game.playerTurn+1);
+		cast( _ui.getAsset("title_text"), FlxUIText).text = "Pass Me to " + Reg.getColorName(Reg.players[Reg.game.playerTurn].race) + " Player";
 		_grpNew = _ui.getGroup("new_turn");
 		_grpDisplay = _ui.getGroup("display");
 		

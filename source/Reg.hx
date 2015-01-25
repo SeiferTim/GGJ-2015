@@ -45,6 +45,23 @@ class Reg
 		
 	}
 	
+	public static function getColorName(PlayerNo:Int):String
+	{
+		var strColor:String= '';
+		switch (PlayerNo)
+		{
+			case 0:
+				strColor = "Red";
+			case 1:
+				strColor = "Purple";
+			case 2:
+				strColor = "Blue";
+			case 3:
+				strColor = "Yellow";
+		}
+		return strColor;
+	}
+	
 	
 	public static function endTurn():Void
 	{

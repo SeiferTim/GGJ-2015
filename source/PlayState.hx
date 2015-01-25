@@ -14,7 +14,15 @@ class PlayState extends FlxState
 		
 		super.update(elapsed);
 		
-		openSubState(new SubPlayer());
+		
+		if (Reg.game.turn >= Reg.game.maxTurns)
+		{
+			openSubState(new SubGameEnd());
+		}
+		else
+		{
+			openSubState(new SubPlayer());
+		}
 		
 	}
 	
