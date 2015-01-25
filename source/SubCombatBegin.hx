@@ -100,8 +100,8 @@ class SubCombatBegin extends FlxUISubState
 					{
 						case "button_red":
 							_ending = true;
-							close();
-							// Or don't actually "close"? Instead should SubCombatFire be run from here?
+							// close();
+							// SubCombatFire(parameterihaventfiguredout);
 						case "button_purple":
 							_ending = true;
 							close();

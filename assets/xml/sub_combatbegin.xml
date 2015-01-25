@@ -5,7 +5,8 @@
 	
 	<group id="display" />
 	
-	
+	<!----
+	This block is for when displaying the other players' inventories becomes possible.
 	<text id="label_rockets" x="20" y="10" text="Rockets: " use_def="screen_text" size="28" align="right" width="68" group="display">
 		<anchor x="left" x-flush="left" y="label_hp.bottom" y-flush="top" />
 	</text>
@@ -15,6 +16,7 @@
 	<text id="label_shields" x="20" y="10" text="Shields: " use_def="screen_text" size="28" align="right" width="68" group="display">
 		<anchor x="left" x-flush="left" y="label_hp.bottom" y-flush="top" />
 	</text>
+	-->
 
 	
 	<button id="button_red" x="-15" y="-15" label="Red Player" use_def="game_button" width="400" group="display">
