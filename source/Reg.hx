@@ -37,6 +37,7 @@ class Reg
 		
 		players = rnd.shuffleArray(players, 10);
 		
+		
 	}
 	
 	

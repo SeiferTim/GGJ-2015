@@ -9,15 +9,15 @@
 		<anchor x="center" y="top" x-flush="center" y-flush="top" />
 	</text>
 	
-	<button_toggle id="players_2" use_def="game_button" x="0" y="10" label="2" width="200" group="buttons" >
+	<button_toggle id="players_2" use_def="game_button_toggle" x="0" y="10" label="2" width="200" group="buttons" >
 		<anchor x="center" y="label_players.bottom" x-flush="center" y-flush="top" />
 		<param type="string" value="players_2" />
 	</button_toggle>
-	<button_toggle id="players_3" use_def="game_button" x="0" y="10" label="3" width="200" group="buttons" >
+	<button_toggle id="players_3" use_def="game_button_toggle" x="0" y="10" label="3" width="200" group="buttons" >
 		<anchor x="center" y="label_players.bottom" x-flush="center" y-flush="top" />
 		<param type="string" value="players_3" />
 	</button_toggle>
-	<button_toggle id="players_4" use_def="game_button" x="0" y="10" label="4" width="200" group="buttons" >
+	<button_toggle id="players_4" use_def="game_button_toggle" x="0" y="10" label="4" width="200" group="buttons" >
 		<anchor x="center" y="label_players.bottom" x-flush="center" y-flush="top" />
 		<param type="string" value="players_4" />
 	</button_toggle>
@@ -27,15 +27,15 @@
 	</text>
 	
 	
-	<button_toggle id="turns_short" use_def="game_button" x="0" y="10" label="Short" width="200" group="buttons" >
+	<button_toggle id="turns_short" use_def="game_button_toggle" x="0" y="10" label="Short" width="200" group="buttons" >
 		<anchor x="center" y="label_length.bottom" x-flush="center" y-flush="top" />
 		<param type="string" value="turns_short" />
 	</button_toggle>
-	<button_toggle id="turns_med" use_def="game_button" x="0" y="10" label="Medium" width="200" group="buttons" >
+	<button_toggle id="turns_med" use_def="game_button_toggle" x="0" y="10" label="Medium" width="200" group="buttons" >
 		<anchor x="center" y="label_length.bottom" x-flush="center" y-flush="top" />
 		<param type="string" value="turns_med" />
 	</button_toggle>
-	<button_toggle id="turns_long" use_def="game_button" x="0" y="10" label="Long" width="200" group="buttons" >
+	<button_toggle id="turns_long" use_def="game_button_toggle" x="0" y="10" label="Long" width="200" group="buttons" >
 		<anchor x="center" y="label_length.bottom" x-flush="center" y-flush="top" />
 		<param type="string" value="turns_long" />
 	</button_toggle>

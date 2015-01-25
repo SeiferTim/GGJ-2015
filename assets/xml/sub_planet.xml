@@ -2,11 +2,12 @@
 <data>
 	<include id="_ui_globals"/>
 
+	<group id="back"/>
 	<group id="display"/>
-	
+	<!--
 	<sprite id="sprite_planet" x="0" y="20" width="400" height="400" color="0xffff0000" group="display">
 		<anchor x="center" y="top" x-flush="center" y-flush="top" />
-	</sprite>
+	</sprite>-->
 	
 	<text id="text_planet" x="0" y="0" text="Planet 1" size="64" width="screen.width" use_def="screen_text" align="center" group="display">
 		<anchor x="center" y="center" x-flush="center" y-flush="center" />

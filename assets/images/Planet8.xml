@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="sprites.png">
+	<!--
+	Created with ShoeBox
+	http://renderhjs.net/shoebox/
+	-->
+	<SubTexture name="Planet8.0001.png"	x="0"	y="1203"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0002.png"	x="0"	y="802"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0003.png"	x="0"	y="401"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0004.png"	x="0"	y="0"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0005.png"	x="401"	y="401"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0006.png"	x="802"	y="401"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0007.png"	x="802"	y="0"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0008.png"	x="401"	y="1203"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0009.png"	x="401"	y="802"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0010.png"	x="802"	y="802"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0011.png"	x="401"	y="0"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+	<SubTexture name="Planet8.0012.png"	x="0"	y="1203"	width="400"	height="400" frameX="-0" frameY="-0" frameWidth="400" frameHeight="400"/>
+</TextureAtlas>
