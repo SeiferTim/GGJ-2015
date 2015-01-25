@@ -19,13 +19,18 @@ class Reg
 	public static var availableRaces:Array<Int>;
 	public static var items:Array<Item>;
 	
+	public static var points:Array<Int> = [2, 2, 2, 4, 4, 6];
+	
+	public static var didMove:Bool;
+	public static var didAction:Bool;
+	
 	public static function startGame(Players:Int, Turns:Int):Void
 	{
 		rnd = new FlxRandom();
 		
 		defineItems();
 		
-		game = new Game(Players + 2, Turns == 0 ? 15 : Turns == 1 ? 30 : 45);
+		game = new Game(Players + 2, Turns == 0 ? 10 : Turns == 1 ? 20 : 30);
 		
 		availableRaces = [0, 1, 2, 3];
 		
@@ -64,6 +69,7 @@ class Reg
 		if (game.playerTurn >= game.players)
 		{
 			game.playerTurn = 0;
+			game.turn++;
 		}
 	}
 	
