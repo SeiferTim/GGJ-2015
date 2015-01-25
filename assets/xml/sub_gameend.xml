@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<include id="_ui_globals"/>
+	
+	<group id="back" />
+	<group id="display" />
+	
+	<sprite id="back_0" x="0" y="0" width="screen.width" height="screen.height" color="0xffff0000" group="back" >
+		<anchor x="center" y="center" x-flush="center" y-flush="center" />
+	</sprite>
+	<sprite id="back_1" x="0" y="0" width="screen.width" height="screen.height" color="0xffff00ff" group="back" >
+		<anchor x="center" y="center" x-flush="center" y-flush="center" />
+	</sprite>
+	<sprite id="back_2" x="0" y="0" width="screen.width" height="screen.height" color="0xff0000ff" group="back" >
+		<anchor x="center" y="center" x-flush="center" y-flush="center" />
+	</sprite>
+	<sprite id="back_3" x="0" y="0" width="screen.width" height="screen.height" color="0xffffff00" group="back" >
+		<anchor x="center" y="center" x-flush="center" y-flush="center" />
+	</sprite>
+	
+	<text id="title_text" x="0" y="20" text="The Winner Is..." use_def="screen_text" size="48" align="center" width="screen.width-20" group="display" >
+		<anchor x="center" x-flush="center" y="top" y-flush="top" />
+	</text>
+	
+	<text id="winner_text" x="0" y="0" text="Red Player!" use_def="screen_text" size="72" align="center" width="screen.width-20" group="display" >
+		<anchor x="center" x-flush="center" y="center" y-flush="center" />
+	</text>
+	
+	<button id="button_replay" x="0" y="-20" label="Play Again?" use_def="game_button" width="400" group="display">
+		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom" />
+		<param type="string" value="button_replay" />
+	</button>
+	
+	
+	<mode id="player_0" is_default="true">
+		<show id="back_0" />
+		<hide id="back_1,back_2,back_3"/>
+		
+	</mode>
+	<mode id="player_1" is_default="true">
+		<show id="back_1" />
+		<hide id="back_0,back_2,back_3"/>
+		
+	</mode>
+	<mode id="player_2" is_default="true">
+		<show id="back_2" />
+		<hide id="back_1,back_0,back_3"/>
+		
+	</mode>
+	<mode id="player_3" is_default="true">
+		<show id="back_3" />
+		<hide id="back_1,back_2,back_0"/>
+		
+	</mode>
+	
+</data>
