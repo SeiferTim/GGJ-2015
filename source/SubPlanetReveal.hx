@@ -33,14 +33,9 @@ class SubPlanetReveal extends FlxUISubState
 		_xml_id = "sub_planet";
 		super.create();
 		
-		if (_whichPlanet > 9)
-		{
-			_ui.getFlxText("text_planet").text = "Wormholes at " + String.fromCharCode(65 + _planetNo) + " and " + String.fromCharCode(65 + _otherWormHole);
-		}
-		else
-		{
-			_ui.getFlxText("text_planet").text = "Planet " + Std.string(_whichPlanet+1);
-		}
+		
+		_ui.getFlxText("text_planet").text = Std.string(Reg.points[_whichPlanet]) + " Credits";
+		Reg.players[Reg.game.playerTurn].credits += Reg.points[_whichPlanet];
 		
 		var p:FlxUISprite;
 		if (_whichPlanet < 10 && _whichPlanet >=0)

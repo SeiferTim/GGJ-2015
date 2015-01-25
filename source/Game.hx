@@ -17,12 +17,12 @@ class Game
 	{
 		players = Players;
 		maxTurns = MaxTurns;
-		turn = 0;
+		turn = 1;
 		
-		positions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+		positions = [0, 1, 2, 3, 4, 5];
 		
 		positions = Reg.rnd.shuffleArray(positions, 10);
-		planetsDiscovered = [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+		planetsDiscovered = [ -1, -1, -1, -1, -1, -1];
 		
 		
 		
