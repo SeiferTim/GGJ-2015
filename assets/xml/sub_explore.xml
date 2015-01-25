@@ -4,25 +4,30 @@
 
 	
 	<group id="display" />
+	
+	
+	<text id="label_fuel" x="20" y="10" text="Fuel:" use_def="screen_text" size="28" align="right" width="68" group="display">
+		<anchor x="left" x-flush="left" y="label_hp.bottom" y-flush="top" />
+	</text>
 
 	
-	<button_toggle id="button_0" x="-20" y="-20" label="Move 0" use_def="game_button" width="200" group="display">
+	<button_toggle id="button_0" x="-15" y="-15" label="Move 0–1 (+1 fuel)" use_def="game_button" width="435" group="display">
 		<anchor x="center" x-flush="right" y="center" y-flush="bottom" />
 		<param type="string" value="button_0" />
 	</button_toggle>
-	<button_toggle id="button_1" x="20" y="-20" label="Move 1" use_def="game_button" width="200" group="display">
+	<button_toggle id="button_1" x="15" y="-15" label="Move 2 (free)" use_def="game_button" width="435" group="display">
 		<anchor x="center" x-flush="left" y="center" y-flush="bottom" />
 		<param type="string" value="button_1" />
 	</button_toggle>
-	<button_toggle id="button_sp" x="-20" y="20" label="Move x" use_def="game_button" width="200" group="display">
+	<button_toggle id="button_sp" x="-15" y="15" label="Move x (−1 fuel)" use_def="game_button" width="435" group="display">
 		<anchor x="center" x-flush="right" y="center" y-flush="top" />
 		<param type="string" value="button_sp" />
 	</button_toggle>
-	<button_toggle id="button_2sp" x="20" y="20" label="Move 2x" use_def="game_button" width="200" group="display">
+	<button_toggle id="button_2sp" x="15" y="15" label="Move 2x (−3 fuel)" use_def="game_button" width="435" group="display">
 		<anchor x="center" x-flush="left" y="center" y-flush="top" />
 		<param type="string" value="button_2sp" />
 	</button_toggle>
-	<button id="button_cancel" x="0" y="-20" label="Cancel" use_def="game_button" width="200" group="display">
+	<button id="button_cancel" x="0" y="-15" label="Cancel" use_def="game_button" width="200" group="display">
 		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom" />
 		<param type="string" value="button_cancel" />
 	</button>

@@ -4,11 +4,17 @@ import flixel.addons.ui.FlxUIButton;
 import flixel.addons.ui.FlxUISubState;
 import flixel.addons.ui.interfaces.IFlxUIWidget;
 import flixel.util.FlxColor;
+import flixel.addons.ui.FlxUIGroup;
 
 
 class SubExplore extends FlxUISubState
 {
-
+	
+	private var _grpNew:FlxUIGroup;
+	private var _grpDisplay:FlxUIGroup;
+	
+	private var _fuel:GameMeter;
+	
 	private var _ending:Bool = false;
 
 	public function new()
@@ -21,6 +27,11 @@ class SubExplore extends FlxUISubState
 		
 		_xml_id = "sub_explore";
 		super.create();
+		
+		_grpDisplay = _ui.getGroup("display");
+		
+		_fuel = new GameMeter(_ui.getAsset("label_fuel").x + _ui.getAsset("label_fuel").width + 10, _ui.getAsset("label_fuel").y, _ui.getAsset("label_fuel").height, 1, Reg.game.playerTurn);
+		_ui.addAsset(_fuel, "fuel_bar", "display");
 		
 		if (Reg.players[Reg.game.playerTurn].curFuel < 3)
 		{
@@ -53,11 +64,14 @@ class SubExplore extends FlxUISubState
 					{
 						case "button_0":
 							// Future: explanatory message
-							Reg.players[Reg.game.playerTurn].curFuel++;
+							if (Reg.players[Reg.game.playerTurn].curFuel < Reg.players[Reg.game.playerTurn].maxFuel)
+							{
+								Reg.players[Reg.game.playerTurn].curFuel++;
+							}
 							_ending = true;
 							close();
 						case "button_1":
-							// Future: message to move one space
+							// Future: message to move 2 spaces
 							// no change in fuel
 							_ending = true;
 							close();
