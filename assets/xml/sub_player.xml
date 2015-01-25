@@ -19,7 +19,13 @@
 	<sprite id="back_3" x="0" y="0" width="screen.width" height="screen.height" color="0xffffff00" group="back" >
 		<anchor x="center" y="center" x-flush="center" y-flush="center" />
 	</sprite>
+	<sprite id="player_chrome" x="0" y="0" src="ui/player_chrome" group="back">
+		<anchor x="left" x-flush="left" y="top" y-flush="top" />
+	</sprite>
 	
+	<sprite id="back_black" x="0" y="0" width="screen.width" height="screen.height" color="0xff000000" group="new_turn" >
+		<anchor x="center" y="center" x-flush="center" y-flush="center" />
+	</sprite>
 	<text id="title_text" x="0" y="20" text="Pass me to Player 1" use_def="screen_text" size="48" align="center" width="screen.width-20" group="new_turn" >
 		<anchor x="center" x-flush="center" y="top" y-flush="top" />
 	</text>
@@ -29,38 +35,32 @@
 		<param type="string" value="button_ready" />
 	</button>
 	
-	<text id="label_hp" x="20" y="20" text="HP:" use_def="screen_text" size="28" align="right" width="68" group="display">
-		<anchor x="left" x-flush="left" y="top" y-flush="top" />
-	</text> 
-	<text id="label_fuel" x="20" y="10" text="Fuel:" use_def="screen_text" size="28" align="right" width="68" group="display">
-		<anchor x="left" x-flush="left" y="label_hp.bottom" y-flush="top" />
-	</text> 
-	 
-	<text id="label_credits" x="20" y="10" text="Credits:" use_def="screen_text" size="28" align="right" width="110" group="display">
-		<anchor x="left" x-flush="left" y="label_fuel.bottom" y-flush="top" />
+	
+	<text id="value_credits" x="560" y="160" text="00000" use_def="screen_text" size="96" align="center" width="200" group="display">
+		<anchor x="left" x-flush="center" y="top" y-flush="center" />
 	</text>
 	
-	<text id="value_credits" x="20" y="10" text="00000" use_def="screen_text" size="28" align="left" width="110" group="display">
-		<anchor x="label_credits.right" x-flush="left" y="label_fuel.bottom" y-flush="top" />
-	</text>
-	
-	<button_toggle id="button_explore" x="0" y="-20" label="Explore" width="200" use_def="game_button_toggle" group="display">
-		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>
+	<button_toggle id="button_explore" x="540" y="360" label="" width="160" height="160" group="display">
+		<graphic id="all" image="ui/button_move" />  
+		<anchor x="left" x-flush="left" y="top" y-flush="top"/>
 		<param type="string" value="button_explore" />
 	</button_toggle>
 	
-	<button_toggle id="button_survey" x="0" y="-20" label="Survey" width="200" use_def="game_button_toggle" group="display">
-		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>
+	<button_toggle id="button_survey" x="360" y="360" label="" width="160" height="160" group="display">
+		<graphic id="all" image="ui/button_planet" />  
+		<anchor x="left" x-flush="left" y="top" y-flush="top"/>
 		<param type="string" value="button_survey" />
 	</button_toggle>
 	
-	<button_toggle id="button_combat" x="0" y="-20" label="Combat" width="200" use_def="game_button_toggle" group="display">
-		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>
+	<button_toggle id="button_combat" x="180" y="360" label=""  width="160" height="160" group="display">
+		<graphic id="all" image="ui/button_combat" /> 
+		<anchor x="left" x-flush="left" y="top" y-flush="top"/>
 		<param type="string" value="button_combat" />
 	</button_toggle>
 	
-	<button id="button_end" x="0" y="-20" label="End Turn" width="200" use_def="game_button" group="display">
-		<anchor x="center" x-flush="center" y="bottom" y-flush="bottom"/>
+	<button id="button_end" x="740" y="360" label=""  width="160" height="160"group="display">
+		<graphic id="all" image="ui/button_end" /> 
+		<anchor x="left" x-flush="left" y="top" y-flush="top"/>
 		<param type="string" value="button_end" />
 	</button>
 	
@@ -68,10 +68,6 @@
 		<anchor x="right" x-flush="right" y="top" y-flush="top"/>
 	</text>
 	
- 	<align axis="horizontal" spacing="20" resize="false">
-		<bounds left="screen.left+20" right="screen.right-20"/>
-		<objects value="button_explore,button_survey,button_combat,button_end"/>
-	</align>
 	
 	<mode id="player_0" is_default="true">
 		<show id="back_0" />

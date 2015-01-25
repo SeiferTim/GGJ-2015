@@ -28,15 +28,15 @@ class SubCombatBegin extends FlxUISubState
 		_xml_id = "sub_combatbegin";
 		super.create();
 		
-		_hp = new GameMeter(_ui.getAsset("label_hp").x + _ui.getAsset("label_hp").width + 10, _ui.getAsset("label_hp").y, _ui.getAsset("label_hp").height, 0, Reg.game.playerTurn);
-		_ui.addAsset(_hp, "hp_bar", "display");
+		//_hp = new GameMeter(_ui.getAsset("label_hp").x + _ui.getAsset("label_hp").width + 10, _ui.getAsset("label_hp").y, _ui.getAsset("label_hp").height, 0, Reg.game.playerTurn);
+		//_ui.addAsset(_hp, "hp_bar", "display");
 		
 		cast(_ui.getAsset("button_red"), FlxUIButton).visible = false;
 		cast(_ui.getAsset("button_purple"), FlxUIButton).visible = false;
 		cast(_ui.getAsset("button_blue"), FlxUIButton).visible = false;
 		cast(_ui.getAsset("button_yellow"), FlxUIButton).visible = false;
 		
-		/*
+		
 		for (i in 0...Reg.game.players)
 		{
 			trace(i);
@@ -56,7 +56,6 @@ class SubCombatBegin extends FlxUISubState
 				}
 			}
 		}
-		*/
 		
 		// cast(_ui.getAsset("button_cancel"), FlxUIButton).visible = true; // always an option to cancel
 		

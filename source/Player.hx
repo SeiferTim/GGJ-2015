@@ -22,7 +22,7 @@ class Player
 		curHealth = maxHealth = 5;
 		curFuel = maxFuel = 5;
 		credits = vp = 0;
-		items = [];
+		items = [1,1,1];
 		
 	}
 	

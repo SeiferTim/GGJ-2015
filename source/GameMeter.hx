@@ -3,6 +3,7 @@ package;
 import flixel.addons.ui.FlxUIGroup;
 import flixel.addons.ui.FlxUISprite;
 import flixel.FlxSprite;
+import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.util.FlxColor;
 
 class GameMeter extends FlxUIGroup
@@ -19,59 +20,80 @@ class GameMeter extends FlxUIGroup
 	
 	public function new(X:Float=0, Y:Float=0, Height:Float, Mode:Int, PlayerNo:Int) 
 	{
-		_height = Height;
+		_height = 40;
 		_mode = Mode;
 		_playerNo = PlayerNo;
 		super(X, Y);
 		_pips = [];
 		var p:FlxUISprite;
 		
-		add(new FlxUISprite(0, 0).makeGraphic((10 * 12) + 2, Std.int(_height), 0xff111111));
+		//add(new FlxUISprite(0, 0).makeGraphic((5 * 22) + 2, Std.int(_height), 0xff111111));
 		
-		for (i in 0...6)
+		for (i in 0...5)
 		{
-			p = cast new FlxUISprite((i * 12)+2, 2).makeGraphic(10, Std.int(_height-4), getColor(i));
+			p = cast new FlxUISprite((i * 22), 0);
+			p.frames = FlxAtlasFrames.fromSparrow(AssetPaths.bars__png, AssetPaths.bars__xml);
+			p.animation.addByNames("fuel-full", ["fuel_full.png"]);
+			p.animation.addByNames("fuel-empty", ["fuel_empty.png"]);
+			p.animation.addByNames("health-full", ["HP_full.png"]);
+			p.animation.addByNames("health-empty", ["HP_empty.png"]);
+			if (_mode == MODE_HP)
+			{
+				if (i < Reg.players[_playerNo].curHealth)
+				{
+					p.animation.play("health-full");
+				}
+				else
+				{
+					p.animation.play("health-empty");
+				}
+			}
+			else 
+			{
+				if (i < Reg.players[_playerNo].curFuel)
+				{
+					p.animation.play("fuel-full");
+				}
+				else
+				{
+					p.animation.play("fuel-empty");
+				}
+			}
 			_pips.push(p);
 			add(p);
 		}
 		
 	}
 	
-	private function getColor(Pos:Int):UInt
+	public function refresh():Void
 	{
-		if (_mode == MODE_HP)
+		var p:FlxUISprite;
+		for (i in 0...5)
 		{
-			if (Pos < Reg.players[_playerNo].curHealth)
+			p = _pips[i];
+			if (_mode == MODE_HP)
 			{
-				return FlxColor.GREEN;
-				
-			}
-			else if (Pos >= Reg.players[_playerNo].maxHealth)
-			{
-				return 0xff333333;
-				
+				if (i < Reg.players[_playerNo].curHealth)
+				{
+					p.animation.play("health-full");
+				}
+				else
+				{
+					p.animation.play("health-empty");
+				}
 			}
 			else 
 			{
-				return 0xffcccccc;
-			}
-		}
-		else
-		{
-			if (Pos < Reg.players[_playerNo].curFuel)
-			{
-				return FlxColor.ORANGE;
-				
-			}
-			else if (Pos >= Reg.players[_playerNo].maxFuel)
-			{
-				return 0xff333333;
-				
-			}
-			else
-			{
-				return 0xffcccccc;
+				if (i < Reg.players[_playerNo].curFuel)
+				{
+					p.animation.play("fuel-full");
+				}
+				else
+				{
+					p.animation.play("fuel-empty");
+				}
 			}
 		}
 	}
+	
 }

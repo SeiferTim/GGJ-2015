@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="sprites.png">
+	<!--
+	Created with ShoeBox
+	http://renderhjs.net/shoebox/
+	-->
+	<SubTexture name="icon_phaser.png"	x="61"	y="0"	width="60"	height="40" frameX="-0" frameY="-0" frameWidth="60" frameHeight="40"/>
+	<SubTexture name="icon_rocket.png"	x="0"	y="41"	width="60"	height="40" frameX="-0" frameY="-0" frameWidth="60" frameHeight="40"/>
+	<SubTexture name="icon_shield.png"	x="0"	y="0"	width="60"	height="40" frameX="-0" frameY="-0" frameWidth="60" frameHeight="40"/>
+</TextureAtlas>
