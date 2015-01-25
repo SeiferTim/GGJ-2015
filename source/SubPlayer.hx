@@ -2,9 +2,11 @@ package;
 
 import flixel.addons.ui.FlxUIButton;
 import flixel.addons.ui.FlxUIGroup;
+import flixel.addons.ui.FlxUISprite;
 import flixel.addons.ui.FlxUISubState;
 import flixel.addons.ui.FlxUIText;
 import flixel.addons.ui.interfaces.IFlxUIWidget;
+import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.util.FlxColor;
 
 class SubPlayer extends FlxUISubState
@@ -28,6 +30,7 @@ class SubPlayer extends FlxUISubState
 		Reg.didMove = false;
 		_xml_id = "sub_player";
 		super.create();
+		
 		_ui.setMode("player_" + Std.string(Reg.players[Reg.game.playerTurn].race));
 		cast( _ui.getAsset("title_text"), FlxUIText).text = "Pass Me to " + Reg.getColorName(Reg.players[Reg.game.playerTurn].race) + " Player";
 		_grpNew = _ui.getGroup("new_turn");
