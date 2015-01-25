@@ -104,6 +104,11 @@ class SubPlayer extends FlxUISubState
 							e = new SubExplore();
 							e.closeCallback = refresh;
 							openSubState(e);
+						case "button_combat":
+							var c:SubCombatBegin = new SubCombatBegin();
+							c = new SubCombatBegin();
+							c.closeCallback = refresh;
+							openSubState(c);
 							
 							
 							

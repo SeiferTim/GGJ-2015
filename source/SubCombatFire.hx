@@ -5,15 +5,13 @@ import flixel.addons.ui.FlxUIButton;
 import flixel.addons.ui.interfaces.IFlxUIWidget;
 import flixel.addons.ui.FlxUISubState;
 
-class SubCombatBegin extends FlxUISubState
+class SubCombatFire extends FlxUISubState
 {
 	
 	private var _grpNew:FlxUIGroup;
 	private var _grpDisplay:FlxUIGroup;
 	
 	private var _ending:Bool = false;
-	
-	private var _hp:GameMeter;
 	
 	// private var playerspresent:Array<Int> = [0, 0, 0, 0];
 
@@ -25,42 +23,35 @@ class SubCombatBegin extends FlxUISubState
 	override public function create():Void 
 	{
 		
-		_xml_id = "sub_combatbegin";
+		_xml_id = "sub_combatfire";
 		super.create();
+		
+		_grpDisplay = _ui.getGroup("display");
 		
 		_hp = new GameMeter(_ui.getAsset("label_hp").x + _ui.getAsset("label_hp").width + 10, _ui.getAsset("label_hp").y, _ui.getAsset("label_hp").height, 0, Reg.game.playerTurn);
 		_ui.addAsset(_hp, "hp_bar", "display");
 		
-		cast(_ui.getAsset("button_red"), FlxUIButton).visible = false;
-		cast(_ui.getAsset("button_purple"), FlxUIButton).visible = false;
-		cast(_ui.getAsset("button_blue"), FlxUIButton).visible = false;
-		cast(_ui.getAsset("button_yellow"), FlxUIButton).visible = false;
+		// Do any buttons need to be loaded and pre-disabled?
 		
-		/*
+		cast(_ui.getAsset("button_cancel"), FlxUIButton); // always an option to cancel
+		
 		for (i in 0...Reg.game.players)
 		{
-			trace(i);
-			trace(Reg.players[Reg.game.playerTurn].race);
-			if (i != Reg.players[Reg.game.playerTurn].race)
+			switch(Reg.players[i].race)
 			{
-				switch(Reg.players[i].race)
-				{
-					case 0:
-						cast(_ui.getAsset("button_red"), FlxUIButton).visible = true;
-					case 1:
-						cast(_ui.getAsset("button_purple"), FlxUIButton).visible = true;
-					case 2:
-						cast(_ui.getAsset("button_blue"), FlxUIButton).visible = true;
-					case 3:
-						cast(_ui.getAsset("button_yellow"), FlxUIButton).visible = true;
-				}
+				case 0:
+					// display red button
+					cast(_ui.getAsset("button_red"), FlxUIButton);
+					// Future: Display Red Player's fuel and weapons stock.
+				case 1:
+					cast(_ui.getAsset("button_purple"), FlxUIButton);
+				case 2:
+					cast(_ui.getAsset("button_blue"), FlxUIButton);
+				case 3:
+					cast(_ui.getAsset("button_yellow"), FlxUIButton);
 			}
 		}
-		*/
 		
-		// cast(_ui.getAsset("button_cancel"), FlxUIButton).visible = true; // always an option to cancel
-		
-		/*
 		if (Reg.players[Reg.game.playerTurn].race == 0)
 		{
 			cast(_ui.getAsset("button_red"), FlxUIButton).toggled = true;
@@ -81,7 +72,6 @@ class SubCombatBegin extends FlxUISubState
 			cast(_ui.getAsset("button_yellow"), FlxUIButton).toggled = true;
 			cast(_ui.getAsset("button_yellow"), FlxUIButton).skipButtonUpdate = true;
 		}
-		*/
 		
 	}
 	
@@ -102,7 +92,7 @@ class SubCombatBegin extends FlxUISubState
 						case "button_red":
 							_ending = true;
 							close();
-							// Or don't actually "close"? Instead should SubCombatFire be run from here?
+							// Or don't actually "close"? Instead should open SubCombatFire from here?
 						case "button_purple":
 							_ending = true;
 							close();
