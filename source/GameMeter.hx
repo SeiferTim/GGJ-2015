@@ -28,7 +28,7 @@ class GameMeter extends FlxUIGroup
 		
 		add(new FlxUISprite(0, 0).makeGraphic((10 * 12) + 2, Std.int(_height), 0xff111111));
 		
-		for (i in 0...6)
+		for (i in 0...10)
 		{
 			p = cast new FlxUISprite((i * 12)+2, 2).makeGraphic(10, Std.int(_height-4), getColor(i));
 			_pips.push(p);

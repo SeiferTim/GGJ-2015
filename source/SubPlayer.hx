@@ -1,6 +1,5 @@
 package;
 
-import flixel.addons.ui.FlxUIButton;
 import flixel.addons.ui.FlxUIGroup;
 import flixel.addons.ui.FlxUISubState;
 import flixel.addons.ui.FlxUIText;
@@ -22,8 +21,6 @@ class SubPlayer extends FlxUISubState
 	
 	override public function create():Void 
 	{
-		Reg.didAction = false;
-		Reg.didMove = false;
 		_xml_id = "sub_player";
 		super.create();
 		_ui.setMode("player_" + Std.string(Reg.players[Reg.game.playerTurn].race));
@@ -36,8 +33,6 @@ class SubPlayer extends FlxUISubState
 		_ui.addAsset(_hp, "hp_bar", "display");
 		_ui.addAsset(_fuel, "fuel_bar", "display");
 		
-		cast(_ui.getAsset("value_turns"), FlxUIText).text = "Turns " + Std.string(Reg.game.turn) + "/" + Std.string(Reg.game.maxTurns);
-		
 		_grpDisplay.visible = false;
 		
 		_txtCredits = cast _ui.getAsset("value_credits");
@@ -48,27 +43,8 @@ class SubPlayer extends FlxUISubState
 	
 	private function refresh():Void
 	{
-		
-		cast(_ui.getAsset("button_explore"), FlxUIButton).has_toggle = false;
-		cast(_ui.getAsset("button_survey"), FlxUIButton).has_toggle = false;
-		cast(_ui.getAsset("button_combat"), FlxUIButton).has_toggle = false;
-		
 		_txtCredits.text = Std.string(Reg.players[Reg.game.playerTurn].credits);
-		if (Reg.didMove || Reg.didAction)
-		{
-			cast(_ui.getAsset("button_explore"), FlxUIButton).has_toggle = true;
-			cast(_ui.getAsset("button_explore"), FlxUIButton).toggled = true;
-			cast(_ui.getAsset("button_explore"), FlxUIButton).skipButtonUpdate = true;
-		}
-		if (Reg.didAction)
-		{
-			cast(_ui.getAsset("button_survey"), FlxUIButton).has_toggle = true;
-			cast(_ui.getAsset("button_survey"), FlxUIButton).toggled = true;
-			cast(_ui.getAsset("button_survey"), FlxUIButton).skipButtonUpdate = true;
-			cast(_ui.getAsset("button_combat"), FlxUIButton).has_toggle = true;
-			cast(_ui.getAsset("button_combat"), FlxUIButton).toggled = true;
-			cast(_ui.getAsset("button_combat"), FlxUIButton).skipButtonUpdate = true;
-		}
+		
 		
 	}
 	

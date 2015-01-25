@@ -76,12 +76,12 @@ class SubExplore extends FlxUISubState
 							_ending = true;
 							close();
 						case "button_sp":
-							// Future: message to move 3 spaces
+							// Future: message to move ## spaces
 							Reg.players[Reg.game.playerTurn].curFuel--;
 							_ending = true;
 							close();
 						case "button_2sp":
-							// Future: message to move 4 spaces
+							// Future: message to move ## spaces
 							Reg.players[Reg.game.playerTurn].curFuel -= 3;
 							_ending = true;
 							close();
