@@ -37,7 +37,7 @@ class SubSurvey extends FlxUISubState
 		btnCancel = cast _ui.getAsset("button_cancel");
 		_sprBack = cast _ui.getAsset("sprite_back");
 		
-		for (i in 0...12)
+		for (i in 0...6)
 		{
 			_grpList.add(new PlanetButton(0, _sprBack.height + (i * 110), i, this));
 		}
@@ -64,8 +64,8 @@ class SubSurvey extends FlxUISubState
 							close();
 						case "button_down":
 							_grpList.y -= 60;
-							if (_grpList.y < FlxG.height - (11 * 110) - _sprBack.height)
-								_grpList.y = FlxG.height - (11 * 110) - _sprBack.height;
+							if (_grpList.y < FlxG.height - (6 * 110) - _sprBack.height)
+								_grpList.y = FlxG.height - (6 * 110) - _sprBack.height;
 							
 						case "button_up":
 							_grpList.y += 60;
@@ -83,22 +83,11 @@ class SubSurvey extends FlxUISubState
 		_showingPlanet = true;
 		if (Reg.game.planetsDiscovered[PlanetNo] == -1)
 		{
-			Reg.players[Reg.game.playerTurn].credits += 100;
+			Reg.didAction = true;
+			
 			Reg.game.planetsDiscovered[PlanetNo] = Reg.game.playerTurn;
 			var otherWormHole:Int = -1;
-			if ( Reg.game.positions[PlanetNo] >= 10)
-			{
-				
-				for (i in 0...12)
-				{
-					if (( Reg.game.positions[PlanetNo] == 10 && Reg.game.positions[i] == 11) || ( Reg.game.positions[PlanetNo] == 11 && Reg.game.positions[i] == 10) )
-					{
-						otherWormHole = i;
-						
-					}
-				}
-				Reg.game.planetsDiscovered[otherWormHole] = Reg.game.playerTurn;
-			}
+			
 			var s:SubPlanetReveal = new SubPlanetReveal(PlanetNo, Reg.game.positions[PlanetNo], otherWormHole);
 			
 			
