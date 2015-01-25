@@ -20,6 +20,8 @@ class SubPlayer extends FlxUISubState
 	
 	private var _txtCredits:FlxUIText;
 	
+	private var _icons:Array<WeaponIcon>;
+	
 	override public function create():Void 
 	{
 		Reg.didAction = false;
@@ -31,8 +33,8 @@ class SubPlayer extends FlxUISubState
 		_grpNew = _ui.getGroup("new_turn");
 		_grpDisplay = _ui.getGroup("display");
 		
-		_hp = new GameMeter(_ui.getAsset("label_hp").x + _ui.getAsset("label_hp").width + 10, _ui.getAsset("label_hp").y, _ui.getAsset("label_hp").height, 0, Reg.game.playerTurn);
-		_fuel = new GameMeter(_ui.getAsset("label_fuel").x + _ui.getAsset("label_fuel").width + 10, _ui.getAsset("label_fuel").y, _ui.getAsset("label_fuel").height, 1, Reg.game.playerTurn);
+		_hp = new GameMeter(280, 170, 0, 0, Reg.game.playerTurn);
+		_fuel = new GameMeter(280, 70,0, 1, Reg.game.playerTurn);
 		_ui.addAsset(_hp, "hp_bar", "display");
 		_ui.addAsset(_fuel, "fuel_bar", "display");
 		
@@ -42,6 +44,22 @@ class SubPlayer extends FlxUISubState
 		
 		_txtCredits = cast _ui.getAsset("value_credits");
 		
+		_icons = [];
+		var wi:WeaponIcon;
+		var wC:Int = 0;
+		for (j in 0...3)
+		{
+			for (i in 0...Reg.players[Reg.game.playerTurn].items[j])
+			{
+				wi = new WeaponIcon();
+				wi.x = 260 + (60 * wC);
+				wi.y = 270;
+				wC++;
+				wi.changeType(j);
+				_icons.push(wi);
+				_ui.addAsset(wi, "icon-" + Std.string(wC), "display");
+			}
+		}
 		refresh();
 		
 	}
@@ -70,6 +88,19 @@ class SubPlayer extends FlxUISubState
 			cast(_ui.getAsset("button_combat"), FlxUIButton).skipButtonUpdate = true;
 		}
 		
+		_hp.refresh();
+		_fuel.refresh();
+		var wi:WeaponIcon;
+		var wC:Int = 0;
+		for (j in 0...3)
+		{
+			for (i in 0...Reg.players[Reg.game.playerTurn].items[j])
+			{
+				wi = _icons[wC];
+				wC++;
+				wi.changeType(j);
+			}
+		}
 	}
 	
 	
